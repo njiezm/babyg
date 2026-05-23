@@ -663,7 +663,7 @@
                         <span class="gift-price">{{ number_format($gift->price, 2, ',', ' ') }} €</span>
                         @if(!$gift->is_reserved)
                             <button class="btn btn-blush" onclick="openGiftModal({{ $gift->id }}, '{{ addslashes($gift->name) }}')" style="padding: 0.5rem 1.1rem; font-size: 0.82rem;">
-                                Réserver
+                                Je veux réserver
                             </button>
                         @else
                             <span style="font-size: 0.8rem; color: var(--text-muted);">par {{ $gift->reserved_by }}</span>
