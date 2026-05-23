@@ -157,7 +157,9 @@
                             @elseif(str_contains($block->key, 'text') || str_contains($block->key, 'intro') || str_contains($block->key, 'description'))
                                 <textarea name="value" rows="3" style="resize: vertical;">{{ $block->value }}</textarea>
                             @elseif(str_contains($block->key, 'date'))
-                                <input type="date" name="value" value="{{ $block->value }}">
+                                <input type="date"
+       name="value"
+       value="{{ $block->value ? \Carbon\Carbon::parse($block->value)->format('Y-m-d') : '' }}">
                             @elseif(str_contains($block->key, 'url') || str_contains($block->key, 'link'))
                                 <input type="url" name="value" value="{{ $block->value }}" placeholder="https://...">
                             @else
@@ -281,7 +283,9 @@
                                     <div class="form-group"><label>Sous-titre</label><input type="text" name="subtitle" value="{{ $event->subtitle }}"></div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="form-group"><label>Date</label><input type="date" name="event_date" value="{{ $event->event_date }}"></div>
+                                    <div class="form-group"><label>Date</label><input type="date"
+       name="event_date"
+       value="{{ $event->event_date ? \Carbon\Carbon::parse($event->event_date)->format('Y-m-d') : '' }}"></div>
                                     <div class="form-group"><label>Ordre</label><input type="number" name="sort_order" value="{{ $event->sort_order }}" min="0"></div>
                                 </div>
                                 <div class="form-group"><label>Description</label><textarea name="description" rows="3">{{ $event->description }}</textarea></div>
