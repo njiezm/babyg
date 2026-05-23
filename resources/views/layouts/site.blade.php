@@ -13,8 +13,8 @@
 
     <style>
         :root {
-            --blush: #F5D6CC;
-            --blush-deep: #E8A898;
+            --blush: #A8D8E8;
+            --blush-deep: #6FB3C8;
             --sage: #B8C9B0;
             --sage-deep: #7A9B6E;
             --cream: #FBF6F0;

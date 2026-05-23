@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
     <style>
         :root {
-            --blush: #F5D6CC;
-            --blush-deep: #E8A898;
+            --blush: #A8D8E8;
+            --blush-deep: #6FB3C8;
             --sage: #B8C9B0;
             --sage-deep: #7A9B6E;
             --cream: #FBF6F0;
