@@ -1,0 +1,28 @@
+<section id="cms-names" class="section-anchor mb-4">
+    <div class="card section-card"><div class="card-header bg-white fw-bold">CMS - Page Prenoms</div><div class="card-body">
+        @foreach(($contentGroups['names'] ?? collect()) as $block)
+            <form method="post" action="{{ route('admin.contents.update', $block) }}" class="row g-2 border rounded p-2 mb-2">
+                @csrf @method('PUT')
+                <input type="hidden" name="group_name" value="{{ $block->group_name }}">
+                <div class="col-md-3"><input class="form-control" name="label" value="{{ $block->label }}"></div>
+                <div class="col-md-1"><input class="form-control" type="number" name="sort_order" value="{{ $block->sort_order }}"></div>
+                <div class="col-md-7"><input class="form-control" name="value" value="{{ $block->value }}"></div>
+                <div class="col-md-1"><button class="btn btn-primary w-100">OK</button></div>
+            </form>
+        @endforeach
+
+        @foreach($nameOptions as $option)
+            <form method="post" action="{{ route('admin.names.update', $option) }}" class="d-flex gap-2 mb-2">@csrf @method('PUT')
+                <input class="form-control" name="name" value="{{ $option->name }}">
+                <span class="badge text-bg-secondary align-self-center">{{ $option->votes_count }} votes</span>
+                <button class="btn btn-primary btn-sm">OK</button>
+            </form>
+            <form method="post" action="{{ route('admin.names.delete', $option) }}" class="mb-2">@csrf @method('DELETE')<button class="btn btn-outline-danger btn-sm">Supprimer {{ $option->name }}</button></form>
+        @endforeach
+
+        <form method="post" action="{{ route('admin.names.store') }}" class="d-flex gap-2 mt-3">@csrf
+            <input class="form-control" name="name" placeholder="Nouveau prenom" required>
+            <button class="btn btn-success">Ajouter</button>
+        </form>
+    </div></div>
+</section>
