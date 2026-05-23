@@ -629,10 +629,7 @@
                 @if($contentByKey->get('hero_image'))
                     <img src="{{ $contentByKey->get('hero_image') }}" alt="Photo principale">
                 @else
-                    {{-- <div class="hero-img-placeholder">🌸</div> --}}
-                    <div class="hero-img-placeholder">
-    <i class="fa-solid fa-baby-carriage"></i>
-</div>
+                    <div class="hero-img-placeholder">🌙</div>
                 @endif
             </div>
             <div class="hero-floater hero-floater-1">
@@ -694,9 +691,7 @@
                         @if($event->image_url)
                             <div class="tl-image-wrap" style="margin-left:auto"><img src="{{ $event->image_url }}" alt="{{ $event->title }}"></div>
                         @else
-                            <div class="tl-image-wrap" style="margin-left:auto"><div class="tl-image-placeholder">
-    <i class="fa-solid fa-baby"></i>
-</div></div>
+                            <div class="tl-image-wrap" style="margin-left:auto"><div class="tl-image-placeholder">🌙</div></div>
                         @endif
                     </div>
                     <div class="tl-dot"><div class="tl-dot-inner"></div></div>
