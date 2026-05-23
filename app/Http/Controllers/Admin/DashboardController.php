@@ -36,7 +36,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function updateContent(ContentBlock $contentBlock, Request $request): RedirectResponse
+    public function updateContentold(ContentBlock $contentBlock, Request $request): RedirectResponse
     {
         $data = $request->validate([
             'value' => ['nullable', 'string'],
@@ -49,6 +49,17 @@ class DashboardController extends Controller
 
         return back()->with('success', 'Contenu mis à jour.');
     }
+
+    public function updateContent(ContentBlock $contentBlock, Request $request): RedirectResponse
+{
+    $data = $request->validate([
+        'value' => ['nullable', 'string'],
+    ]);
+
+    $contentBlock->update($data);
+
+    return back()->with('success', 'Contenu mis à jour.');
+}
 
     public function storeTimeline(Request $request): RedirectResponse
     {
