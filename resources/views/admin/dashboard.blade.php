@@ -148,7 +148,7 @@
                                 @endif
                                 <div style="margin-bottom: 0.5rem;">
                                     <label style="margin-bottom: 0.25rem; font-size: 0.72rem;">Uploader une nouvelle image</label>
-                                    <input type="file" name="image_upload" accept="image/*" style="font-size: 0.8rem;">
+                                    <input type="file" name="image_file" accept="image/*" style="font-size: 0.8rem;">
                                 </div>
                                 <div>
                                     <label style="margin-bottom: 0.25rem; font-size: 0.72rem;">Ou URL directe (optionnel)</label>
@@ -216,7 +216,7 @@
                 </div>
                 <div class="form-group">
                     <label>Photo (upload)</label>
-                    <input type="file" name="image_upload" accept="image/*">
+                    <input type="file" name="image_file" accept="image/*">
                 </div>
                 <div class="form-group">
                     <label>Ou URL de l'image (optionnel)</label>
@@ -292,7 +292,7 @@
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label>Nouvelle photo (upload)</label>
-                                        <input type="file" name="image_upload" accept="image/*">
+                                        <input type="file" name="image_file" accept="image/*">
                                         @if($event->image_url)<p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Actuelle : <a href="{{ $event->image_url }}" target="_blank">voir</a></p>@endif
                                     </div>
                                     <div class="form-group"><label>Ou URL image</label><input type="url" name="image_url" value="{{ $event->image_url }}" placeholder="https://..."></div>
@@ -336,7 +336,7 @@
                 </div>
                 <div class="form-group">
                     <label>Photo du cadeau (upload)</label>
-                    <input type="file" name="image_upload" accept="image/*">
+                    <input type="file" name="image_file" accept="image/*">
                 </div>
                 <div class="form-group">
                     <label>Ou URL image (optionnel)</label>
@@ -407,7 +407,7 @@
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label>Nouvelle photo (upload)</label>
-                                        <input type="file" name="image_upload" accept="image/*">
+                                        <input type="file" name="image_file" accept="image/*">
                                         @if($gift->image_url)<p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;"><a href="{{ $gift->image_url }}" target="_blank">Voir image actuelle</a></p>@endif
                                     </div>
                                     <div class="form-group"><label>Ou URL image</label><input type="url" name="image_url" value="{{ $gift->image_url }}" placeholder="https://..."></div>

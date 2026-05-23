@@ -200,6 +200,27 @@ class DashboardController extends Controller
     }
 
     private function resolveImagePath(Request $request, string $fileInput, string $urlInput, ?string $current = null): ?string
+{
+    if ($request->boolean('remove_image')) {
+        return null;
+    }
+
+    // 1. PRIORITÉ ABSOLUE : fichier uploadé
+    if ($request->hasFile($fileInput)) {
+        $path = $request->file($fileInput)->store('baby-shower', 'public');
+        return Storage::url($path);
+    }
+
+    // 2. sinon URL
+    if ($request->filled($urlInput)) {
+        return trim((string) $request->input($urlInput));
+    }
+
+    // 3. sinon ancien
+    return $current;
+}
+
+    private function resolveImagePathold(Request $request, string $fileInput, string $urlInput, ?string $current = null): ?string
     {
         if ($request->boolean('remove_image')) {
             return null;
